@@ -24,12 +24,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 *****************************************************************************/
 
-#include <ATMVF.h>
+#include <AdvancedClockFramework.h>
 
+AdvancedClockFramework * acf;
+
+/////////////////////////////////////////////////////////////////////////////
+// Setup routine
 void setup()
-{  
-} 
+{
+  // Create clock handler object
+  acf = new AdvancedClockFramework();
+  
+  // Configure clock handler
+}
 
+/////////////////////////////////////////////////////////////////////////////
+// Main loop
 void loop()
 {
+  // Handle inputs and internal functions of AdvancedClockFramework
+  acf->Update();
+  
+  
 }

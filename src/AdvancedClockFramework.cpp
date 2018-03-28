@@ -24,4 +24,42 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 *****************************************************************************/
 
-#include <ATMVF.h>
+#include <AdvancedClockFramework.h>
+
+AdvancedClockFramework::AdvancedClockFramework()
+{
+  m_initialized = false;
+  m_bluetoothActive = false;
+  m_serialActive = false;
+}
+
+bool AdvancedClockFramework::Update()
+{
+  return true;
+}
+
+bool AdvancedClockFramework::GetDate(
+  int & day,
+  int & month,
+  int & year,
+  bool & daylightSavingTime)
+{
+  // Check if initialization was successful
+  if(!m_initialized)
+  {
+    return false;
+  }
+  
+  return true;
+}
+
+bool AdvancedClockFramework::GetTime(int & hours, int & minutes, int & seconds)
+{
+  // Check if initialization was successful
+  if(!m_initialized)
+  {
+    return false;
+  }
+  
+  return true;
+}

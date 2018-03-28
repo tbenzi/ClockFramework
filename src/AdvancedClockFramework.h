@@ -24,7 +24,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 *****************************************************************************/
 
-#ifndef 
-#define
+#ifndef ADVANCED_TIME_MEASUREMENT_AND_VISUALIZATION_FRAMEWORK_ATMVF_H
+#define ADVANCED_TIME_MEASUREMENT_AND_VISUALIZATION_FRAMEWORK_ATMVF_H
+
+class AdvancedClockFramework
+{
+private:
+  bool m_initialized; // Initialization flag
+  bool m_bluetoothActive; // True when bluetooth configured and working
+  bool m_serialActive; // True when serial port configured and working
+  
+public:
+  // Default constructor.
+  AdvancedClockFramework();
+  
+  // To be called in the main loop function. It refreshes all the clock 
+  // internal information and handles inputs
+  bool Update();
+  
+  // Gets date
+  bool GetDate(int & day, int & month, int & year, bool & daylightSavingTime);
+  
+  // Gets time
+  bool GetTime(int & hours, int & minutes, int & seconds);
+};
 
 #endif

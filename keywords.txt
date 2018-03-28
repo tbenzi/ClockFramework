@@ -6,10 +6,12 @@
 # Datatypes (KEYWORD1)
 ###########################################
 
-DS1624	KEYWORD1
+AdvancedClockFramework	KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
 ###########################################
 
-GetTemperature	KEYWORD2
+GetDate	KEYWORD2
+GetTime	KEYWORD2
+Update	KEYWORD2
