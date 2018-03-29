@@ -24,16 +24,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 *****************************************************************************/
 
-#include <AdvancedClockFramework.h>
+#include <SimpleDigitalClock.h>
 
-AdvancedClockFramework * acf;
+SimpleDigitalClock * myClock;
 
 /////////////////////////////////////////////////////////////////////////////
 // Setup routine
 void setup()
 {
   // Create clock handler object
-  acf = new AdvancedClockFramework();
+  myClock = new SimpleDigitalClock();
   
   // Configure clock handler
 }
@@ -42,8 +42,6 @@ void setup()
 // Main loop
 void loop()
 {
-  // Handle inputs and internal functions of AdvancedClockFramework
-  acf->Update();
-  
-  
+  // Handle inputs and internal functions of SimpleDigitalClock
+  myClock->WriteOutputs();
 }

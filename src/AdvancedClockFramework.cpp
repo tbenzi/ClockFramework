@@ -26,6 +26,8 @@ SOFTWARE.
 
 #include <AdvancedClockFramework.h>
 
+//////////////////////////////////////////////////////////////////////////////
+// Default constructor
 AdvancedClockFramework::AdvancedClockFramework()
 {
   m_initialized = false;
@@ -33,11 +35,30 @@ AdvancedClockFramework::AdvancedClockFramework()
   m_serialActive = false;
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// Destructor
+AdvancedClockFramework::~AdvancedClockFramework()
+{
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Updates all internal information and handles inputs
 bool AdvancedClockFramework::Update()
 {
   return true;
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// Visualization function, to be overriden by specific implementation
+bool AdvancedClockFramework::WriteOutputs()
+{
+  bool success = Update();
+  // TODO overriden function must do here what needed to print clock output 
+  return success;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Gets date
 bool AdvancedClockFramework::GetDate(
   int & day,
   int & month,
@@ -53,6 +74,8 @@ bool AdvancedClockFramework::GetDate(
   return true;
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// Gets time
 bool AdvancedClockFramework::GetTime(int & hours, int & minutes, int & seconds)
 {
   // Check if initialization was successful
